@@ -1,7 +1,9 @@
 package com.practice.bookreportboard.web.dto;
 
 import com.practice.bookreportboard.domain.posts.Posts;
+import lombok.Getter;
 
+@Getter
 public class PostsResponseDto {
     private Long id;
     private String title;
