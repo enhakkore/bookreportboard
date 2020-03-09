@@ -4,6 +4,7 @@ import com.practice.bookreportboard.domain.posts.Posts;
 import com.practice.bookreportboard.domain.posts.PostsRepository;
 import com.practice.bookreportboard.web.dto.PostsResponseDto;
 import com.practice.bookreportboard.web.dto.PostsSaveRequestDto;
+import com.practice.bookreportboard.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,9 +20,9 @@ public class PostsService {
     }
 
     @Transactional
-    public Long update(Long id, PostsSaveRequestDto postsSaveRequestDto){
+    public Long update(Long id, PostsUpdateRequestDto postsUpdateRequestDto){
         Posts post = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 id가 없습니다. id = " + id));
-        post.update(postsSaveRequestDto.getTitle(), postsSaveRequestDto.getContent());
+        post.update(postsUpdateRequestDto.getTitle(), postsUpdateRequestDto.getContent());
         return id;
     }
 
