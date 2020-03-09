@@ -3,6 +3,7 @@ package com.practice.bookreportboard.web;
 import com.practice.bookreportboard.service.posts.PostsService;
 import com.practice.bookreportboard.web.dto.PostsResponseDto;
 import com.practice.bookreportboard.web.dto.PostsSaveRequestDto;
+import com.practice.bookreportboard.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ public class PostsApiController {
     }
 
     @PutMapping("/api/v1/posts/{id}")
-    public Long update(@PathVariable Long id, @RequestBody PostsSaveRequestDto requestDto) {
+    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
     }
 
