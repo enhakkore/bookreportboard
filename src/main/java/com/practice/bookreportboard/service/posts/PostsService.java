@@ -40,4 +40,10 @@ public class PostsService {
     public List<PostsListResponseDto> findAllDesc() {
         return postsRepository.findAllDesc().stream().map(PostsListResponseDto::new).collect(toList());
     }
+
+    @Transactional
+    public void delete(Long id) {
+        Posts post = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 id가 없습니다. id = "+id));
+        postsRepository.delete(post);
+    }
 }
