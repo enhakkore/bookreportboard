@@ -1,0 +1,30 @@
+{{>layout/header}}
+
+<h1>검색 결과</h1>
+<table class="table table-horizontal table-bordered">
+    <thead>
+    <tr>
+        <th>이미지</th>
+        <th>책이름</th>
+        <th>지은이</th>
+        <th>출판사</th>
+        <th>선택</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#books}}
+    <tr>
+        <td class="td-image">
+            <img width ="120" src="{{image}}">
+            <div class="image-src">{{image}}</div>
+        </td>
+        <td class="td-title">{{{title}}}</td>
+        <td class="td-author">{{author}}</td>
+        <td class="td-publisher">{{publisher}}</td>
+        <td><input type="button" class="bookSelected" value="선택"></td>
+    </tr>
+    {{/books}}
+    </tbody>
+</table>
+
+{{>layout/footer}}
