@@ -15,9 +15,13 @@ const index = {
         let data = {
             title: $('#title').val(),
             author: $('#author').val(),
-            content: $('#content').val()
+            content: $('#content').val(),
+            bookTitle: $('.bookTitle').text(),
+            bookAuthor: $('.bookAuthor').text(),
+            bookImage: $('.image-src').text(),
+            bookPublisher: $('.bookPublisher').text()
         };
-8
+
         $.ajax({
             type: 'POST',
             url: '/api/v1/posts',
