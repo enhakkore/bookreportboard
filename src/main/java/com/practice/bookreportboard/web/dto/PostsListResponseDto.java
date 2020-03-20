@@ -12,6 +12,8 @@ public class PostsListResponseDto {
     private String author;
     private String content;
     private LocalDateTime modifiedDate;
+    private String bookTitle;
+    private String bookImage;
 
     public PostsListResponseDto(Posts entity){
         this.id = entity.getId();
@@ -19,5 +21,7 @@ public class PostsListResponseDto {
         this.author = entity.getAuthor();
         this.content = entity.getContent();
         this.modifiedDate = entity.getModifiedDate();
+        this.bookImage = entity.getBookImage();
+        this.bookTitle = entity.getBookTitle();
     }
 }
