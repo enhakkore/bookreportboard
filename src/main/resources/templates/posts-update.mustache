@@ -4,6 +4,28 @@
 
 <div class="col-md-12">
     <div class="col-md-4">
+        <table class="table-bordered bookInfo">
+            <captioin>책 정보</captioin>
+            <tr>
+                <td colspan="2">
+                    <img class="mx-auto d-block" src="{{post.bookImage}}">
+                </td>
+            </tr>
+            <tr>
+                <td>책 제목</td>
+                <td>{{post.bookTitle}}</td>
+            </tr>
+            <tr>
+                <td>저자</td>
+                <td>{{post.bookAuthor}}</td>
+            </tr>
+            <tr>
+                <td>출판사</td>
+                <td>{{post.bookPublisher}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-4">
         <form>
             <div class="form-group">
                 <label for="id">글번호</label>
