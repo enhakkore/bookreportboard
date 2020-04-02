@@ -16,7 +16,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.annotation.PostConstruct;
 
-@Getter
 @Component
 public class NaverBookRestTemplate {
 
