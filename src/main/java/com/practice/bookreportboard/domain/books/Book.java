@@ -3,6 +3,9 @@ package com.practice.bookreportboard.domain.books;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+import java.util.List;
+
 @Getter
 @Setter
 public class Book {
@@ -10,10 +13,10 @@ public class Book {
     private String link;
     private String image;
     private String author;
-    private String price;
-    private String discount;
+    private Integer price;
+    private Integer discount;
     private String publisher;
     private String isbn;
     private String description;
-    private String pubdate;
+    private Date pubdate;
 }
