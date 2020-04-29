@@ -1,7 +1,7 @@
-package com.practice.bookreportboard.domain.books;
+package com.practice.bookreportboard.domain.books.naver;
 
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
@@ -36,6 +36,8 @@ public class NaverBookRestTemplate {
 
     @PostConstruct
     public void postConstruct(){
+        RestTemplateBuilder tmp = new RestTemplateBuilder();
+//        restTemplate = tmp.errorHandler(new MyErrorHandler()).build();
         restTemplate = new RestTemplate();
 
         MultiValueMap<String, String> headerMap = new LinkedMultiValueMap<>();
