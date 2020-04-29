@@ -1,5 +1,6 @@
-package com.practice.bookreportboard.domain.books;
+package com.practice.bookreportboard.domain.books.naver;
 
+import com.practice.bookreportboard.domain.books.Book;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,5 +14,5 @@ public class NaverBooks {
     private Integer total;
     private Integer start;
     private Integer display;
-    private List<Book> items;
+    private List<Item> items;
 }
