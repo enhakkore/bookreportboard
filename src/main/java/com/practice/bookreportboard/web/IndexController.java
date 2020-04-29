@@ -39,7 +39,7 @@ public class IndexController {
 
     @GetMapping("/search/results/{bookTitle}")
     public String searchResults(Model model, @PathVariable String bookTitle){
-        model.addAttribute("books", bookService.search(bookTitle).getItems());
+        model.addAttribute("books", bookService.search(bookTitle));
         return "searchResults";
     }
 }
