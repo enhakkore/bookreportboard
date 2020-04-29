@@ -9,5 +9,5 @@ import java.util.List;
 @Setter
 public class KakaoBooks {
     private Meta meta;
-    private List<Book> documents;
+    private List<Document> documents;
 }

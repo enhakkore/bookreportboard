@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class Book {
+public class Document {
     private String title;
     private String content;
     private String url;
