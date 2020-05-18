@@ -57,7 +57,7 @@ const bookSearch = {
             $('.bookTitle').text(title);
             $('.bookAuthor').text(author);
             $('.bookPublisher').text(publisher);
-            $('.bookImage').html("<img class='mx-auto d-block' src="+image+">");
+            $('.bookImage').html("<img class='mx-auto d-block' alt='이미지없음' src="+image+">");
             $('.image-src').text(image);
 
             sessionStorage.clear();
