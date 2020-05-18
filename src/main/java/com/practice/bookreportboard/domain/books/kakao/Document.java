@@ -10,7 +10,7 @@ import java.util.List;
 @Setter
 public class Document {
     private String title;
-    private String content;
+    private String contents;
     private String url;
     private String isbn;
     private Date datetime;
