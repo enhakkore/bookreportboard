@@ -4,7 +4,7 @@ const bookSearch = {
     init : function () {
         let _this = this;
         $('.form-title').keypress( function (event) {
-            if(event.keyCode == 13){
+            if(event.keyCode === 13){
                 event.preventDefault();
                 _this.search();
             }
