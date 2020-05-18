@@ -1,14 +1,11 @@
 package com.practice.bookreportboard.domain.books;
 
 import com.practice.bookreportboard.domain.books.kakao.Document;
-import com.practice.bookreportboard.domain.books.kakao.KakaoBooks;
 import com.practice.bookreportboard.domain.books.naver.Item;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Getter
 @Setter
