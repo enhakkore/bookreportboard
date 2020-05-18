@@ -48,6 +48,12 @@ public class IndexController {
         return "search";
     }
 
+//    @GetMapping("/search/results/{bookTitle}")
+//    public String searchResults(Model model, @PathVariable String bookTitle){
+//        model.addAttribute("books", bookService.search(bookTitle));
+//        return "searchResults";
+//    }
+
     @GetMapping("/search/results/{bookTitle}")
     public Rendering bookSearchResults(@PathVariable String bookTitle){
         Mono<List<Book>> results = bookService.kakaoBookSearch(bookTitle)

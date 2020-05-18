@@ -1,6 +1,5 @@
 package com.practice.bookreportboard.domain.books.naver;
 
-import com.practice.bookreportboard.domain.books.Book;
 import com.practice.bookreportboard.domain.books.CustomError;
 import lombok.Getter;
 import lombok.Setter;
