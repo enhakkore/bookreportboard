@@ -22,9 +22,7 @@ const bookSearch = {
     },
     search : function () {
         let bookTitle = $('.bookTitle').val();
-        let url = '/search/results/' + bookTitle;
-
-        window.location.href = url;
+        window.location.href = '/search/results/' + bookTitle;
     },
     selection : function (button) {
         let tr = $(button).parent().parent();
