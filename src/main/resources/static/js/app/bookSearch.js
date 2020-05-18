@@ -18,6 +18,7 @@ const bookSearch = {
         });
         _this.hide();
         _this.selectedResult();
+        _this.checkService();
     },
     search : function () {
         let bookTitle = $('.bookTitle').val();
@@ -62,6 +63,13 @@ const bookSearch = {
             $('.image-src').text(image);
 
             sessionStorage.clear();
+        }
+    },
+    checkService : function () {
+        let message = $('.errorContent').text();
+        if(message){
+            alert("현재 서비스를 이용할 수 없습니다.");
+            window.location.href='/';
         }
     }
 };
