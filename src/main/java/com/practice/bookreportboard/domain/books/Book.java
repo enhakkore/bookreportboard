@@ -33,7 +33,7 @@ public class Book {
         this.discount = doc.getSale_price();
         this.publisher = doc.getPublisher();
         this.isbn = doc.getIsbn();
-        this.description = doc.getContent();
+        this.description = doc.getContents();
         this.pubdate = doc.getDatetime();
     }
 
