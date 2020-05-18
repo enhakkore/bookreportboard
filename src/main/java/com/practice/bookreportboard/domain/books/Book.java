@@ -28,7 +28,7 @@ public class Book {
         this.title = doc.getTitle();
         this.link = doc.getUrl();
         this.image = doc.getThumbnail();
-        this.author = doc.getAuthors().stream().collect(Collectors.joining(", "));
+        this.author = String.join(", ", doc.getAuthors());
         this.price = doc.getPrice();
         this.discount = doc.getSale_price();
         this.publisher = doc.getPublisher();
