@@ -20,15 +20,6 @@ public class Book {
     private String isbn;
     private String description;
     private Date pubdate;
-    private String errorContent;
-
-    public Book(String errorContent){
-        this.errorContent = errorContent;
-        this.image = "";
-        this.title = "";
-        this.author = "";
-        this.publisher = "";
-    }
 
     public Book(Document doc){
         this.title = doc.getTitle();
@@ -41,7 +32,6 @@ public class Book {
         this.isbn = doc.getIsbn();
         this.description = doc.getContents();
         this.pubdate = doc.getDatetime();
-        this.errorContent = "";
     }
 
     public Book(Item item){
@@ -55,6 +45,5 @@ public class Book {
         this.isbn = item.getIsbn();
         this.description = item.getDescription();
         this.pubdate = item.getPubdate();
-        this.errorContent = "";
     }
 }
