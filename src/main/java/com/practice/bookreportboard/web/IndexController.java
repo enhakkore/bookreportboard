@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.reactive.result.view.Rendering;
 import reactor.core.publisher.Mono;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -56,12 +54,8 @@ public class IndexController {
 
     @GetMapping("/search/results/{bookTitle}")
     public Rendering bookSearchResults(@PathVariable String bookTitle){
-        Mono<List<Book>> results = bookService.kakaoBookSearch(bookTitle)
-                                    .flatMap(clientResponse -> clientResponse.bodyToMono(KakaoBooks.class))
+        Mono<List<Book>> results = bookService.kakaoBookSearch(bookTitle).bodyToMono(KakaoBooks.class)
                                     .map(kakaoBooks -> {
-                                        if(Objects.nonNull(kakaoBooks.getErrorContent()))
-                                            return Collections.singletonList(new Book(kakaoBooks.getErrorContent()));
-
                                         if(Objects.isNull(kakaoBooks.getDocuments()))
                                             return kakaoBooks.getItems().stream().map(Book::new).collect(toList());
                                         else return kakaoBooks.getDocuments().stream().map(Book::new).collect(toList());
