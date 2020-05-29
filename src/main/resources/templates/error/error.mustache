@@ -1,0 +1,30 @@
+{{>layout/header}}
+
+<div class="alert alert-warning" role="alert">
+    <h4 class="alert-heading">현재 서비스를 사용할 수 없습니다.</h4>
+    <a href="/">처음 페이지로 돌아가기</a>
+    <hr>
+    <details>
+        <summary>에러 상세 내용</summary>
+        <div id="errorId" class="errorContents">
+            {{#error}}
+                <div>시간 : {{timestamp}}</div>
+                <div>경로 : {{path}}</div>
+                <div>상태 : {{status}}</div>
+                <div>에러 : {{error}}</div>
+                <div>메세지 : {{message}}</div>
+                <div>request ID : {{requestId}}</div>
+                <details>
+                    <summary>trace :</summary>
+                    <div>{{{trace}}}</div>
+                </details>
+            {{/error}}
+        </div>
+    </details>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
