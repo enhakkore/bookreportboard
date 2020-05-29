@@ -30,7 +30,7 @@ public class KakaoBookWebClient {
 
     private WebClient client;
     private UriComponents uriComponents;
-    private List<ExchangeFilterFunction> exchangeFilterFunctionList;
+    private List<ExchangeFilterFunction> exchangeFilterFunctionList = new LinkedList<>();
 
     public static <R extends Mono<ClientResponse>> ExchangeFilterFunction createResponseFilter(Function<ClientResponse, R> function){
         return ExchangeFilterFunction.ofResponseProcessor( clientResponse -> {
@@ -42,8 +42,6 @@ public class KakaoBookWebClient {
     }
 
     public KakaoBookWebClient addFilter(ExchangeFilterFunction exchangeFilterFunction){
-        if(Objects.isNull(exchangeFilterFunctionList))
-            this.exchangeFilterFunctionList = new LinkedList<>();
         this.exchangeFilterFunctionList.add(exchangeFilterFunction);
 
         return this;

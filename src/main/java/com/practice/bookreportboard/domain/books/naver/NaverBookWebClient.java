@@ -32,11 +32,9 @@ public class NaverBookWebClient {
 
     private WebClient client;
     private UriComponents uriComponents;
-    private List<ExchangeFilterFunction> exchangeFilterFunctionList;
+    private List<ExchangeFilterFunction> exchangeFilterFunctionList = new LinkedList<>();
 
     public NaverBookWebClient addFilter(ExchangeFilterFunction exchangeFilterFunction){
-        if(Objects.isNull(exchangeFilterFunctionList))
-            exchangeFilterFunctionList = new LinkedList<>();
         exchangeFilterFunctionList.add(exchangeFilterFunction);
 
         return this;
