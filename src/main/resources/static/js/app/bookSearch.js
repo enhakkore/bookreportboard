@@ -20,8 +20,11 @@ const bookSearch = {
         _this.selectedResult();
     },
     search : function () {
-        let bookTitle = $('.bookTitle').val();
-        window.location.href = '/search/results/' + bookTitle;
+        let bookTitle = $('.bookTitle').val().trim();
+        if(bookTitle == '')
+            alert("책 제목을 입력해주세요.");
+        else
+            window.location.href = '/search/results/' + bookTitle;
     },
     selection : function (button) {
         let tr = $(button).parent().parent();
