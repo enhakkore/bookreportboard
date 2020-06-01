@@ -8,16 +8,18 @@
         <summary>에러 상세 내용</summary>
         <div id="errorId" class="errorContents">
             {{#error}}
-                <div>시간 : {{timestamp}}</div>
-                <div>경로 : {{path}}</div>
-                <div>상태 : {{status}}</div>
-                <div>에러 : {{error}}</div>
-                <div>메세지 : {{message}}</div>
-                <div>request ID : {{requestId}}</div>
+                {{#timestamp}}<div>시간 : {{.}}</div>{{/timestamp}}
+                {{#path}}<div>경로 : {{.}}</div>{{/path}}
+                {{#status}}<div>상태 : {{.}}</div>{{/status}}
+                {{#error}}<div>에러 : {{.}}</div>{{/error}}
+                {{#message}}<div>메세지 : {{.}}</div>{{/message}}
+                {{#requestId}}<div>request ID : {{.}}</div>{{/requestId}}
+                {{#trace}}
                 <details>
                     <summary>trace :</summary>
-                    <div>{{{trace}}}</div>
+                    <div>{{{.}}}</div>
                 </details>
+                {{/trace}}
             {{/error}}
         </div>
     </details>
