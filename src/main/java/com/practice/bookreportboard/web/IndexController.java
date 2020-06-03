@@ -1,5 +1,7 @@
 package com.practice.bookreportboard.web;
 
+import com.practice.bookreportboard.domain.books.Book;
+import com.practice.bookreportboard.domain.books.kakao.KakaoBooks;
 import com.practice.bookreportboard.service.books.BookService;
 import com.practice.bookreportboard.service.posts.PostsService;
 import lombok.RequiredArgsConstructor;
@@ -7,6 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Controller
@@ -39,7 +45,14 @@ public class IndexController {
 
     @GetMapping("/search/results/{bookTitle}")
     public String searchResults(Model model, @PathVariable String bookTitle){
-        model.addAttribute("books", bookService.search(bookTitle));
+        KakaoBooks responseBody = bookService.search(bookTitle).getBody();
+        List<Book> books;
+
+        if(!Objects.isNull(responseBody.getDocuments()))
+            books = responseBody.getDocuments().stream().map(Book::new).collect(Collectors.toList());
+        else books = responseBody.getItems().stream().map(Book::new).collect(Collectors.toList());
+
+        model.addAttribute("books", books);
         return "searchResults";
     }
 }
