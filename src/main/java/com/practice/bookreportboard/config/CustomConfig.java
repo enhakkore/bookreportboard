@@ -2,6 +2,7 @@ package com.practice.bookreportboard.config;
 
 import com.practice.bookreportboard.web.PageHandler;
 import com.practice.bookreportboard.web.PostsApiHandler;
+import com.practice.bookreportboard.web.ProfileHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.*;
@@ -16,6 +17,7 @@ public class CustomConfig {
 
     private final PageHandler pageHandler;
     private final PostsApiHandler postsApiHandler;
+    private final ProfileHandler profileHandler;
 
     @Bean
     public RouterFunction<ServerResponse> pageRouterFunction() {
@@ -34,5 +36,10 @@ public class CustomConfig {
                                 RouterFunctions.route(PATCH(""), postsApiHandler::update)
                                     .andRoute(GET(""), postsApiHandler::get)
                                     .andRoute(DELETE(""), postsApiHandler::delete)));
+    }
+
+    @Bean
+    public RouterFunction<ServerResponse> profileRouterFunction() {
+        return RouterFunctions.route(GET("/profile"), profileHandler::profile);
     }
 }
