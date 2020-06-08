@@ -12,7 +12,11 @@
     * JUnit5  
 * Front-end  
     * Template - Mustache  
-    * Library - jQuery, Bootstrap   
+    * Library - jQuery, Bootstrap  
+
+### 기능  
+* 책 검색  
+* 게시판(등록,수정,삭제)  
 
 ### 정보  
 * API 통신에 필요한 값이 있는 `application-api.properties`는 git에서 제외하였습니다.  
