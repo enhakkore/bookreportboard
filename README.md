@@ -1,4 +1,4 @@
-# 독후감 게시판  
+# 독후감 게시판 [![Build Status](https://travis-ci.org/enhakkore/bookreportboard.svg?branch=master)](https://travis-ci.org/enhakkore/bookreportboard)  
 * 독후감을 쓸 책을 검색해 선택하고 게시글을 작성하는 웹 애플리케이션  
 ---
 
