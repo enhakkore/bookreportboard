@@ -18,13 +18,16 @@ public class ProfileHandler {
     private final Environment environment;
 
     public Mono<ServerResponse> profile(ServerRequest serverRequest) {
+        String bodyValue = getCurrentEnvProfile();
+        return ServerResponse.ok().body(BodyInserters.fromValue(bodyValue));
+    }
+
+    public String getCurrentEnvProfile() {
         List<String> profiles = Arrays.asList(environment.getActiveProfiles());
         List<String> realProfiles = Arrays.asList("real", "real1", "real2");
         String defaultProfile = profiles.isEmpty() ? "default" : profiles.get(0);
 
-        String bodyValue = profiles.stream().filter(realProfiles::contains).findAny().orElse(defaultProfile);
-
-        return ServerResponse.ok().body(BodyInserters.fromValue(bodyValue));
+        return profiles.stream().filter(realProfiles::contains).findAny().orElse(defaultProfile);
     }
 
 }
