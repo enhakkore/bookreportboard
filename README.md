@@ -13,6 +13,9 @@
 * Front-end  
     * Template - Mustache  
     * Library - jQuery, Bootstrap  
+* DevOps  
+    * AWS EC2, S3, CodeDeploy  
+    * Travis CI  
 
 ### 기능  
 * 책 검색  
