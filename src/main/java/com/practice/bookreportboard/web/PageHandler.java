@@ -5,7 +5,6 @@ import com.practice.bookreportboard.domain.books.kakao.KakaoBooks;
 import com.practice.bookreportboard.service.books.BookService;
 import com.practice.bookreportboard.service.posts.PostsService;
 import org.springframework.stereotype.Component;
-import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.server.*;
 import reactor.core.publisher.Mono;
 
@@ -52,10 +51,5 @@ public class PageHandler {
                 });
 
         return ServerResponse.ok().render("searchResults", Map.of("books", results));
-    }
-
-    // favicon을 등록하지 않을 경우 RouterFunction에 등록
-    public Mono<ServerResponse> favicon(ServerRequest serverRequest){
-        return ServerResponse.ok().body(BodyInserters.empty());
     }
 }
